@@ -1,0 +1,31 @@
+.Available{
+font-weight: 400;
+font-size: 15px;
+color: #0fbf00;
+}
+
+.dr{
+    font-weight: 500;
+    font-size: 22px;
+    color: #1f2937;  
+}
+.general{
+font-weight: 400;
+font-size: 15px;
+color: #4b5563;
+}
+.doctorW{
+border-radius: 12px 12px 0 0;
+width: 273px;
+height: 273px;
+background: #eaefff;
+}
+
+@media (max-width: 575.98px) { 
+    .doctorRes{
+        width: 50%;
+    }
+    .dr{
+        font-size: 18px;
+    }
+}

@@ -50,7 +50,7 @@ export const Banner = () => {
          </div>
          <div className="row">
             <div className="col-lg-2 col-md-4 col-sm-4 findRes">
-                <div>
+                <div  className='MyImg hover:cursor-pointer'>
                 <div className='d-flex justify-center'>
                    <img src={findImg} alt="images" />
                  </div>
@@ -60,7 +60,7 @@ export const Banner = () => {
             </div>
 
             <div className="col-lg-2 col-md-4 col-sm-4 findRes">
-            <div>
+            <div  className='MyImg hover:cursor-pointer'>
                 <div className='d-flex justify-center'>
                    <img src={findImg1} alt="images" />
                  </div>
@@ -70,7 +70,7 @@ export const Banner = () => {
             </div>
 
             <div className="col-lg-2 col-md-4 col-sm-4 findRes">
-            <div>
+            <div  className='MyImg hover:cursor-pointer'>
                 <div className='d-flex justify-center'>
                    <img src={findImg2} alt="images" />
                  </div>
@@ -79,7 +79,7 @@ export const Banner = () => {
                 </div>
             </div>
             <div className="col-lg-2 col-md-4 col-sm-4 findRes">
-            <div>
+            <div  className='MyImg hover:cursor-pointer'>
                 <div className='d-flex justify-center'>
                    <img src={findImg3} alt="images" />
                  </div>
@@ -88,7 +88,7 @@ export const Banner = () => {
                 </div>
             </div>
             <div className="col-lg-2 col-md-4 col-sm-4 findRes">
-            <div>
+            <div  className='MyImg hover:cursor-pointer'>
                 <div className='d-flex justify-center'>
                    <img src={findImg4} alt="images" />
                  </div>
@@ -97,7 +97,7 @@ export const Banner = () => {
                 </div>
             </div>
             <div className="col-lg-2 col-md-4 col-sm-4 findRes">
-            <div>
+            <div  className='MyImg hover:cursor-pointer'>
                 <div className='d-flex justify-center'>
                    <img src={findImg5} alt="images" />
                  </div>

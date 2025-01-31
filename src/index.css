@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+.MyImg{
+    box-shadow: 0 24px 116px 0 rgba(43, 56, 76, 0.09);
+}
+
+.MyImg {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.MyImg:hover {
+    transform: scale(1.05); /* Scale the image on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+}
