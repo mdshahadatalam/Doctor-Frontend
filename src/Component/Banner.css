@@ -1,0 +1,56 @@
+.header{
+font-weight: 600;
+font-size: 63px;
+line-height: 127%;
+color: #fff;
+}
+.simply{
+font-weight: 400;
+font-size: 18px;
+line-height: 150%;
+color: #fff;
+}
+.groupImg{
+    width: 130px;
+height: 56px;
+}
+
+.book{
+border-radius: 47px;
+width: 190px;
+height: 63px;
+background: #fff;
+font-weight: 400;
+font-size: 18px;
+line-height: 239%;
+color: #595959;
+}
+
+
+.find{
+font-weight: 500;
+font-size: 40px;
+color: #1f2937;
+text-align: center;
+}
+
+.findDami{
+font-weight: 400;
+font-size: 18px;
+line-height: 150%;
+text-align: center;
+color: #4b5563;
+}
+
+.general{
+font-weight: 400;
+font-size: 18px;
+text-align: center;
+color: #4b5563;
+}
+
+@media (max-width: 575.98px) { 
+    .findRes{
+        width: 50%;
+    }
+}

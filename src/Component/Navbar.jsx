@@ -8,7 +8,7 @@ export const Navbar = () => {
   return (
     <>
     <section>
-        <div className="container">
+        <div className="container px-0">
         <nav
             className="flex items-center justify-between w-full relative bg-white rounded-full px-[10px] py-[8px]">
 
