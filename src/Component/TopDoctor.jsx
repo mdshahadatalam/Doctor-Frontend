@@ -121,6 +121,11 @@ export const TopDoctor = () => {
                      </div>
                 </div>
             </div>
+
+
+             <div className=' py-5 text-center'>
+                 <button className='w-[150px] h-[60px] bg-[#EAEFFF] text-[#4B5563] font-semibold font-serif  tracking-wider MyImg' >More</button>
+             </div>
         </div>
     </section>
    </>

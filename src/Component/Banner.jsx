@@ -26,7 +26,7 @@ export const Banner = () => {
               </p>
            
             <div className="py-2 flex justify-center lg:justify-start">
-              <button className="flex items-center text-2xl bg-white text-[#5F6FFF] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-gray-200 transition-all">
+              <button className=" MyImg flex items-center text-2xl bg-white text-[#5F6FFF] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-gray-200 transition-all">
                 Book appointment <IoIosArrowRoundForward className="ml-2 text-lg" />
               </button>
             </div>
