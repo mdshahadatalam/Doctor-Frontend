@@ -115,7 +115,7 @@ text-align: center;
 color: #1f2937;
 }
 
-/* contact section  */
+/* about section  */
 .contactDami{
 font-weight: 400;
 font-size: 18px;
@@ -128,4 +128,34 @@ text-align: justify;
 .vision{
     font-size: 18px;
     font-weight: bold;
+}
+
+.why{
+font-weight: 400;
+font-size: 24px;
+text-transform: uppercase;
+color: #4b5563;
+}
+
+.choose{
+font-weight: 600;
+color: #1f2937;
+}
+
+.effi{
+font-weight: 600;
+font-size: 18px;
+text-transform: uppercase;
+color: #1f2937;
+}
+.stream{
+font-weight: 400;
+font-size: 18px;
+line-height: 180%;
+text-transform: capitalize;
+color: #4b5563;
+}
+
+.aboutBox{
+    border: 1px solid #1f2937; 
 }

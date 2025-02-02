@@ -26,6 +26,34 @@ export const About = () => {
               </div>
           </div>
        </section>
+
+
+
+       <section className='py-5'>
+          <div className="container">
+             <h4 className='why py-3'>Why  <span className='choose'>Choose Us</span> </h4>
+                <div className="row">
+                <div className="col-lg-4 p-0 col-md-4">
+                     <div className='aboutBox p-4'>
+                         <h4 className='effi py-2'>Efficiency:</h4>
+                         <p className='stream pb-2'>Streamlined appointment scheduling that fits into your busy lifestyle.</p>
+                     </div>
+                </div>
+                <div className="col-lg-4 p-0 col-md-4">
+                <div className='aboutBox p-4'>
+                         <h4 className='effi py-2'>Convenience:</h4>
+                         <p className='stream pb-2'>Access to a network of trusted healthcare professionals in your area.</p>
+                     </div>
+                </div>
+                <div className="col-lg-4 p-0 col-md-4">
+                   <div className='aboutBox p-4'>
+                         <h4 className='effi py-2'>Personalization:</h4>
+                         <p className='stream pb-2'>Tailored recommendations and reminders to help you stay on top of </p>
+                     </div>
+                </div>
+                </div>
+          </div>
+       </section>
     </>
   )
 }
