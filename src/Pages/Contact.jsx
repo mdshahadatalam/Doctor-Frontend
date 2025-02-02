@@ -28,7 +28,7 @@ export const Contact = () => {
                      <h4 className='urOff py-3'>Careers at PRESCRIPTO</h4>
                      <p className='details pb-3'>Learn more about our teams and job openings.</p>
 
-                     <button className='ExploreBtn'>Explore Jobs</button>
+                     <button className='ExploreBtn MyImg'>Explore Jobs</button>
                   </div>
               </div>
          </div>
