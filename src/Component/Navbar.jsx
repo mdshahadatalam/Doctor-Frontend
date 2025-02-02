@@ -10,6 +10,8 @@ export const Navbar = () => {
 
     const handleSignUp =()=>{
           navigate('/signUp')
+
+          setMobileSidebarOpen(false)
     }
 
 
@@ -63,7 +65,7 @@ export const Navbar = () => {
                    <Link className='edit' to={'/contact'}> <li onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)} className="before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer capitalize">contact</li></Link>
 
                     <div className="items-center gap-[10px] flex">
-                <button className='CreateSmall'>
+                <button onClick={handleSignUp} className='CreateSmall'>
                     Create account
                 </button>
             </div>
