@@ -64,10 +64,8 @@ export const TopDoctor = () => {
                           <span className='general'>General physician</span>
                      </div>
                 </div>
-            </div>
 
 
-            <div className="row">
                 <div className="col-lg-3 col-md-4 col-sm-6 doctorRes">
                      <div className='shadow-md rounded-md  p-2 bg-[#C9D8FF] my-2 MyImg hover:cursor-pointer'>
                         <div className=''><img src={doctor1} alt="image" /></div>
@@ -121,6 +119,7 @@ export const TopDoctor = () => {
                      </div>
                 </div>
             </div>
+
 
 
              <div className=' py-5 text-center'>
