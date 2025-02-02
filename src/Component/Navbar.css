@@ -42,3 +42,8 @@ letter-spacing: 1px;
     font-size: 18px;
     
  }
+
+ .edit{
+    text-decoration: none;
+    color: white;
+ }
