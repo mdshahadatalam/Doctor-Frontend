@@ -6,6 +6,8 @@ import { RootLayout } from './RootLayout/RootLayout';
 import { AllDoctor } from './Pages/AllDoctor';
 import { About } from './Pages/About';
 import { Contact } from './Pages/Contact';
+import { SignUp } from './Pages/SignUp';
+import { SignIn } from './Pages/SignIn';
 function App() {
 
   const route = createBrowserRouter(createRoutesFromElements(
@@ -15,6 +17,8 @@ function App() {
             <Route path='/allDoc' element={<AllDoctor/>} />
             <Route path='/about' element={<About/>} />
             <Route path='/contact' element={<Contact/>} />
+            <Route path='/signUp' element={<SignUp/>} />
+            <Route path='/signIn' element={<SignIn/>} />
           </Route>
     </Route>
   ))

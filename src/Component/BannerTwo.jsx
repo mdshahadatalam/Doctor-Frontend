@@ -1,8 +1,14 @@
 import React from 'react'
 import './BannerTwo.css'
 import femal from '../assets/images/banner/femal.png'
+import { useNavigate } from 'react-router'
 
 export const BannerTwo = () => {
+  const navigate = useNavigate()
+  const handleSignUp =()=>{
+    navigate('/signUp')
+  }
+
   return (
     <> 
        <section className='py-5'>
@@ -13,7 +19,7 @@ export const BannerTwo = () => {
                        <h4 className='bannerTwoH text-center py-4'>Book Appointment With 100+ Trusted Doctors</h4>
 
                           <div className='d-flex justify-center'>
-                            <button className='new MyImg'>Create account</button>
+                            <button onClick={handleSignUp} className='new MyImg'>Create account</button>
                           </div>
                        </div>
                  </div>

@@ -3,9 +3,16 @@ import './Navbar.css'
 import {IoIosSearch} from "react-icons/io";
 import {CiMenuFries} from "react-icons/ci";
 import logo from '../assets/images/logo/logo.svg'
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 export const Navbar = () => {
     const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
+    const navigate = useNavigate()
+
+    const handleSignUp =()=>{
+          navigate('/signUp')
+    }
+
+
   return (
     <>
     <section>
@@ -25,12 +32,12 @@ export const Navbar = () => {
 
                 <Link className='edit' to={'/about'}><li className=" navText before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer capitalize">about</li></Link>
 
-                <Link className='edit' to={'/contact'}><li className=" navText before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer capitalize">contact</li></Link>
+                <Link className='edit' to={'/contact'}><li  className=" navText before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer capitalize">contact</li></Link>
             </ul>
 
             {/* action buttons */}
             <div className="items-center gap-[10px] flex">
-                <button className='createAcc'>
+                <button onClick={handleSignUp} className='createAcc'>
                     Create account
                 </button>
 
@@ -65,6 +72,8 @@ export const Navbar = () => {
 
             </aside>
         </nav>
+
+        <hr />
         </div>
     </section>
     </>
