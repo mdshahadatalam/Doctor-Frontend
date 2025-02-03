@@ -1,7 +1,74 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router'
+import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
 
 export const SignUp = () => {
+
+  const [name,setName] = useState("")
+  const [email,setEmail] = useState("")
+  const [password,setPassword] = useState("")
+  const navigate = useNavigate()
+
+  const handleName = (e)=>{
+       setName(e.target.value)
+  }
+
+  const handleEmail =(e)=>{
+      setEmail(e.target.value)
+  }
+
+  const handlePassword =(e)=>{
+    setPassword(e.target.value)
+  }
+
+  const handleSubmit =()=>{
+    console.log(name,email,password);
+    axios.post('http://localhost:3000/signUp',{
+      name:name,
+      email:email,
+      password:password
+    }).then(res=>{
+      console.log(res);
+      setName('')
+      setEmail('')
+      setPassword('')
+
+      toast.success('Sign up success', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        // transition: Bounce,
+        });
+
+      setTimeout(()=>{
+        navigate('/signIn')
+      },2500)
+      
+    }).catch(err=>{
+      console.log(err);
+
+      toast.error('Please try again', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        // transition: Bounce,
+        });
+      
+    })
+    
+  }
   return (
     <>
         <div className='signUp mt-5'>
@@ -15,21 +82,47 @@ export const SignUp = () => {
                          </div>
                          
                          
-                         <input className='inpo mt-4' type="text" name="name" id="name" placeholder='Full name' />
+                         <input
+                          className='inpo mt-4'
+                           type="text"
+                            name="name"
+                             id="name"
+                             placeholder='Full name' 
+                             onChange={handleName}
+                             value={name}
+                             />
 
-                         <input className='inpo mt-4' type="email" name="email" id="email" placeholder='Your email' />
+                         <input
+                          className='inpo mt-4'
+                           type="email"
+                            name="email"
+                             id="email"
+                              placeholder='Your email'
+                              onChange={handleEmail}
+                              value={email}
+                               />
 
-                         <input className='inpo mt-4' type="password" name="password" id="password" placeholder='New password' />
+                         <input
+                          className='inpo mt-4'
+                           type="password"
+                            name="password"
+                             id="password"
+                              placeholder='New password'
+                              onChange={handlePassword}
+                              value={password}
+                               />
 
 
                           <div>
-                             <button className='createBtn mt-3'>Create account</button>
+                             <button onClick={handleSubmit} className='createBtn mt-3'>Create account</button>
                           </div>
 
                           <p className='already pt-3'>Already have an account? <Link className='here' to={'/signIn'} >Login here</Link> </p>
                    </div>
               </div>
         </div>
+
+        <ToastContainer />
     </>
   )
 }
