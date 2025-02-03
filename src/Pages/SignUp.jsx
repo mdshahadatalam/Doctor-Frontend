@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
+import PropagateLoader from 'react-spinners/esm/PropagateLoader';
+
 
 export const SignUp = () => {
 
@@ -10,6 +12,7 @@ export const SignUp = () => {
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
   const navigate = useNavigate()
+  const [loader,setLoader] = useState(false)
 
   const handleName = (e)=>{
        setName(e.target.value)
@@ -24,13 +27,15 @@ export const SignUp = () => {
   }
 
   const handleSubmit =()=>{
-    console.log(name,email,password);
+    // console.log(name,email,password);
+      setLoader(true)
     axios.post('http://localhost:3000/signUp',{
       name:name,
       email:email,
       password:password
     }).then(res=>{
       console.log(res);
+      setLoader(false)
       setName('')
       setEmail('')
       setPassword('')
@@ -53,6 +58,7 @@ export const SignUp = () => {
       
     }).catch(err=>{
       console.log(err);
+      setLoader(false)
 
       toast.error('Please try again', {
         position: "top-right",
@@ -114,7 +120,11 @@ export const SignUp = () => {
 
 
                           <div>
-                             <button onClick={handleSubmit} className='createBtn mt-3'>Create account</button>
+                             <button onClick={handleSubmit} className='createBtn mt-3'>
+                              {
+                                loader ? <PropagateLoader size={5} color='white' /> :"Create account"
+                              }
+                              </button>
                           </div>
 
                           <p className='already pt-3'>Already have an account? <Link className='here' to={'/signIn'} >Login here</Link> </p>

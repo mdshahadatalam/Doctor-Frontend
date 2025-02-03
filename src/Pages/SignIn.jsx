@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router'
+import React, { useEffect, useState } from 'react'
+import { data, Link, useNavigate } from 'react-router'
 import axios from 'axios'
 import { toast, ToastContainer } from 'react-toastify';
+import PropagateLoader from 'react-spinners/esm/PropagateLoader';
 
 export const SignIn = () => {
     
 const [email,setEmail] = useState("")
 const [password,setPassword] = useState("")
 const navigate = useNavigate()
+const [loader,setLoader] = useState(false)
 
 const handleEmail =(e)=>{
     setEmail(e.target.value)
@@ -18,22 +20,35 @@ const handlePassword =(e)=>{
 }
 
 const handleSubmit =()=>{
-      console.log(email,password)
-
+      // console.log(email,password)
+      setLoader(true)
       axios.post('http://localhost:3000/login',{
             email:email,
             password:password
-      }).then(result=>{
+      }).then((result)=>{
+            setLoader(false)
             console.log(result.data)
+            
             if(result.data === "Success"){
                   navigate("/")
               }else{
                   navigate("/signUp")
-                  alert("You are not registered to this service")
+                  toast.error('You are not registered to this service', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        // transition: Bounce,
+                        });
   
               }
       }).catch(err=>{
             console.log(err)
+            setLoader(false)
 
              toast.error('Please try again', {
                     position: "top-right",
@@ -48,6 +63,7 @@ const handleSubmit =()=>{
                     });
       })
 }
+
 
   return (
   <>
@@ -81,7 +97,11 @@ const handleSubmit =()=>{
 
 
                           <div>
-                             <button onClick={handleSubmit} className='createBtn mt-3'>Login</button>
+                             <button onClick={handleSubmit} className='createBtn mt-3'>
+                              {
+                                    loader ? <PropagateLoader size={5} color='white' /> : "Login"
+                              }
+                              </button>
                           </div>
 
                           <p className='already pt-3'>Don't have an account? <Link className='here' to={'/signUp'} >sign up</Link> </p>
