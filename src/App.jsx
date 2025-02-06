@@ -8,17 +8,28 @@ import { About } from './Pages/About';
 import { Contact } from './Pages/Contact';
 import { SignUp } from './Pages/SignUp';
 import { SignIn } from './Pages/SignIn';
+import { ContactInfor } from './Component/ContactInfor';
+import { UserD } from './Component/UserD';
+import LoggedInUser from './PrivateRoute/LoggeInRoute';
+
 function App() {
 
   const route = createBrowserRouter(createRoutesFromElements(
     <Route>
           <Route element={<RootLayout/>}>
             <Route path='/' element={<Home/>} />
-            <Route path='/allDoc' element={<AllDoctor/>} />
             <Route path='/about' element={<About/>} />
             <Route path='/contact' element={<Contact/>} />
             <Route path='/signUp' element={<SignUp/>} />
             <Route path='/signIn' element={<SignIn/>} />
+            <Route path='/contactInfor' element={<ContactInfor/>}/>
+            <Route path='/user' element={<UserD/>}/>
+          </Route>
+
+          <Route element={<LoggedInUser/>}>
+              <Route element={<RootLayout/>}>
+                 <Route path='/allDoc' element={<AllDoctor/>} />
+                 </Route>
           </Route>
     </Route>
   ))

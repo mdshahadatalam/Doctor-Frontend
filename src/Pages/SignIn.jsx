@@ -3,6 +3,9 @@ import { data, Link, useNavigate } from 'react-router'
 import axios from 'axios'
 import { toast, ToastContainer } from 'react-toastify';
 import PropagateLoader from 'react-spinners/esm/PropagateLoader';
+import { useDispatch } from 'react-redux';
+import { loggedInUser } from '../Feuature/Slice/LoginSlice';
+import { RxCross2 } from "react-icons/rx";
 
 export const SignIn = () => {
     
@@ -10,6 +13,8 @@ const [email,setEmail] = useState("")
 const [password,setPassword] = useState("")
 const navigate = useNavigate()
 const [loader,setLoader] = useState(false)
+const dispatch = useDispatch()
+const [user,setUser] = useState("")
 
 const handleEmail =(e)=>{
     setEmail(e.target.value)
@@ -30,7 +35,9 @@ const handleSubmit =()=>{
             console.log(result.data)
             
             if(result.data === "Success"){
-                  navigate("/")
+                  dispatch(loggedInUser(user))
+               localStorage.setItem("user",JSON.stringify(user))
+                  navigate("/allDoc")
               }else{
                   navigate("/signUp")
                   toast.error('You are not registered to this service', {
@@ -65,10 +72,25 @@ const handleSubmit =()=>{
 }
 
 
+useEffect(()=>{
+       async function data(){
+            let data = await axios.get('http://localhost:3000/loginData')
+            // console.log(data.data)
+            setUser(data.data)
+            
+       }
+       data()
+},[])
+
+
   return (
   <>
      <div className='signUp mt-5'>
               <div className=' w-[476px] pb-3  mainSign text-center shadow-md'>
+
+                     <div>
+                          <span className='w-[40px] h-[40px] rounded-full text-black'><RxCross2 /></span>
+                     </div>
                    <div className='pb-2'>
                          
 
