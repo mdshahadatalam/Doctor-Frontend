@@ -4,9 +4,13 @@ import {IoIosSearch} from "react-icons/io";
 import {CiMenuFries} from "react-icons/ci";
 import logo from '../assets/images/logo/logo.svg'
 import { Link, useNavigate } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { loggedOutUser } from '../Feuature/Slice/LoginSlice';
 export const Navbar = () => {
     const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const [token,setToken] = useState(true)
 
     const handleSignUp =()=>{
           navigate('/signUp')
@@ -14,6 +18,12 @@ export const Navbar = () => {
           setMobileSidebarOpen(false)
     }
 
+    const handleLogOut =()=>{
+        localStorage.removeItem('user')
+        dispatch(loggedOutUser());
+        navigate('/')
+        setToken(true)
+    }
 
   return (
     <>
@@ -39,9 +49,17 @@ export const Navbar = () => {
 
             {/* action buttons */}
             <div className="items-center gap-[10px] flex">
-                <button onClick={handleSignUp} className='createAcc'>
+
+              
+            
+                {
+                    token ? <button onClick={handleSignUp} className='createAcc'>
                     Create account
-                </button>
+                </button>:<button onClick={handleLogOut} className='createAcc'>Log out </button> 
+                }  
+             
+             
+               
 
                 <CiMenuFries
                     className="text-[1.8rem] mr-1 text-[#424242]c cursor-pointer md:hidden flex"

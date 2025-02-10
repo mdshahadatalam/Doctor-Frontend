@@ -27,8 +27,18 @@ letter-spacing: 1px;
 
 @media (max-width: 991.98px) { 
     .createAcc{
-        display: none;
+        /* display: none; */
+        width: auto;
+        font-size: 13px;
+        height: auto;
+        padding: 5px;
     }  
+ }
+
+ @media (max-width: 575.98px) { 
+    .createAcc{
+        display: none;
+    }
  }
 
  .CreateSmall{

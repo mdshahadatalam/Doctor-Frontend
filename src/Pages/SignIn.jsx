@@ -83,13 +83,18 @@ useEffect(()=>{
 },[])
 
 
+const handleHome =()=>{
+      navigate("/")
+}
+
+
   return (
   <>
      <div className='signUp mt-5'>
               <div className=' w-[476px] pb-3  mainSign text-center shadow-md'>
 
-                     <div>
-                          <span className='w-[40px] h-[40px] rounded-full text-black'><RxCross2 /></span>
+                     <div className='position-relative'>
+                          <span onClick={handleHome} className='w-[32px] h-[32px] d-inline-block d-flex bg-slate-200 rounded-full text-black justify-center align-items-center position-absolute right-2 top-1 hover:cursor-pointer'><RxCross2 /></span>
                      </div>
                    <div className='pb-2'>
                          

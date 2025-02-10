@@ -23,3 +23,11 @@ transition: 0.5s;
         height: 29px;
     } 
 }
+
+
+
+@media (max-width: 991.98px) { 
+    .AllRes{
+      text-align: center;
+    }
+ }

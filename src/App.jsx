@@ -11,8 +11,11 @@ import { SignIn } from './Pages/SignIn';
 import { ContactInfor } from './Component/ContactInfor';
 import { UserD } from './Component/UserD';
 import LoggedInUser from './PrivateRoute/LoggeInRoute';
+import { useState } from 'react';
+import { DoctorDetaile } from './Pages/DoctorDetaile';
 
 function App() {
+
 
   const route = createBrowserRouter(createRoutesFromElements(
     <Route>
@@ -21,9 +24,10 @@ function App() {
             <Route path='/about' element={<About/>} />
             <Route path='/contact' element={<Contact/>} />
             <Route path='/signUp' element={<SignUp/>} />
-            <Route path='/signIn' element={<SignIn/>} />
+            <Route path='/signIn' element={<SignIn />} />
             <Route path='/contactInfor' element={<ContactInfor/>}/>
             <Route path='/user' element={<UserD/>}/>
+            <Route path='/doctorD' element={<DoctorDetaile/>} />
           </Route>
 
           <Route element={<LoggedInUser/>}>
