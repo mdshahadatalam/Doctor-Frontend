@@ -10,8 +10,15 @@ import findImg2 from '../assets/images/find/find (3).svg'
 import findImg3 from '../assets/images/find/find (4).svg'
 import findImg4 from '../assets/images/find/find (5).svg'
 import findImg5 from '../assets/images/find/find (6).svg'
+import { useNavigate } from 'react-router'
 
 export const Banner = () => {
+
+  const navigate = useNavigate()
+
+  const handleAppointment =()=>{
+    navigate('/appointment')
+  }
   return (
     <>
        <section className="px-4 py-6 md:px-10 lg:px-16">
@@ -26,7 +33,7 @@ export const Banner = () => {
               </p>
            
             <div className="py-2 flex justify-center lg:justify-start">
-              <button className=" MyImg flex items-center text-2xl bg-white text-[#5F6FFF] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-gray-200 transition-all">
+              <button onClick={handleAppointment} className=" MyImg flex items-center text-2xl bg-white text-[#5F6FFF] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-gray-200 transition-all">
                 Book appointment <IoIosArrowRoundForward className="ml-2 text-lg" />
               </button>
             </div>
