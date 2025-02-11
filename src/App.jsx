@@ -13,6 +13,7 @@ import { UserD } from './Component/UserD';
 import LoggedInUser from './PrivateRoute/LoggeInRoute';
 import { useState } from 'react';
 import { DoctorDetaile } from './Pages/DoctorDetaile';
+import { Appointment } from './Component/Appointment';
 
 function App() {
 
@@ -28,6 +29,8 @@ function App() {
             <Route path='/contactInfor' element={<ContactInfor/>}/>
             <Route path='/user' element={<UserD/>}/>
             <Route path='/doctorD' element={<DoctorDetaile/>} />
+
+            <Route path='/appointment' element={<Appointment/>} />
           </Route>
 
           <Route element={<LoggedInUser/>}>
