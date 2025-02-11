@@ -12,17 +12,25 @@ export const Navbar = () => {
     const dispatch = useDispatch()
     const [token,setToken] = useState(true)
 
+
+    const handleSignIn =(e)=>{
+        e.preventDefault()
+        navigate('/signUp')
+    }
+
     const handleSignUp =()=>{
           navigate('/signUp')
 
           setMobileSidebarOpen(false)
     }
 
-    const handleLogOut =()=>{
-        localStorage.removeItem('user')
+    
+
+    const handleLogOut =(e)=>{
+        e.preventDefault()
         dispatch(loggedOutUser());
+        localStorage.removeItem('user')
         navigate('/')
-        setToken(true)
     }
 
   return (
@@ -52,11 +60,13 @@ export const Navbar = () => {
 
               
             
-                {
+                {/* {
                     token ? <button onClick={handleSignUp} className='createAcc'>
                     Create account
                 </button>:<button onClick={handleLogOut} className='createAcc'>Log out </button> 
-                }  
+                }   */}
+
+                  <span className='font-bold font-serif signIn border-1 p-2'> <a className='text-black signInLink' onClick={handleSignIn} href="">Sign in</a> / <a className='text-black signInLink ' onClick={handleLogOut} href="">Log out</a></span>
              
              
                

@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './TopDoctor.css'
 import doctor1 from '../assets/images/doctor/doctor1 (1).png'
 import doctor2 from '../assets/images/doctor/doctor1 (2).png'
 import doctor4 from '../assets/images/doctor/doctor1 (4).png'
+import { useNavigate } from 'react-router';
+import { SyncLoader } from "react-spinners";
 export const TopDoctor = () => {
+      
+      const [loader,setLoader] = useState(false)
+      const navigate = useNavigate()
+     const handleMore =()=>{
+          setLoader(true)
+          setTimeout(()=>{
+                navigate('/allDoc')
+               },2500)
+     }
   return (
    <>
       
@@ -122,7 +133,11 @@ export const TopDoctor = () => {
 
 
              <div className=' py-5 text-center'>
-                 <button className='w-[150px] h-[60px] bg-[#EAEFFF] text-[#4B5563] font-semibold font-serif  tracking-wider MyImg' >More</button>
+                 <button onClick={handleMore} className='w-[150px] h-[60px] bg-[#EAEFFF] text-[#4B5563] font-semibold font-serif  tracking-wider MyImg' >
+                    {
+                         loader?<SyncLoader  size={5} color='black' />:"More"
+                    }
+                    </button>
              </div>
         </div>
     </section>

@@ -5,38 +5,22 @@ text-transform: uppercase;
 text-align: center;
 color: #1f2937;
 }
-.createAcc{
-font-weight: 400;
-font-size: 18px;
-line-height: 239%;
-color: #fff;
-border-radius: 47px;
-width: 155px;
-height: 54px;
-background: #5f6fff;
-transition: 0.5s;
-font-family: 'Times New Roman', Times, serif;
-letter-spacing: 1px;
-}
-
-.createAcc:hover{
-    transform: scale(1.1);
-    transition: 0.3s;
-    box-shadow: 3px 3px 30px #7a85e7 ;
+.signInLink{
+    text-decoration: none;
 }
 
 @media (max-width: 991.98px) { 
-    .createAcc{
+    .signIn{
         /* display: none; */
         width: auto;
-        font-size: 13px;
+        font-size: 10px;
         height: auto;
         padding: 5px;
     }  
  }
 
  @media (max-width: 575.98px) { 
-    .createAcc{
+    .signIn{
         display: none;
     }
  }
