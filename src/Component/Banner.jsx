@@ -18,7 +18,43 @@ export const Banner = () => {
 
   const handleAppointment =()=>{
     navigate('/appointment')
+    scroll(0,0)
   }
+
+  const handleGeneral =()=>{
+     navigate('/general')
+     scroll(0,0)
+  }
+
+
+  const handleGynecologist =()=>{
+    navigate('/gynecologist')
+    scroll(0,0)
+ }
+
+
+ const handleDermatologist =()=>{
+  navigate('/dermatologist')
+  scroll(0,0)
+}
+
+
+const handlePediatricians =()=>{
+  navigate('/pediatricians')
+  scroll(0,0)
+}
+
+
+const handleNeurologist =()=>{
+  navigate('/neurologist')
+  scroll(0,0)
+}
+
+const handleGastroenterologist =()=>{
+  navigate('/gastroenterologist')
+  scroll(0,0)
+}
+
   return (
     <>
        <section className="px-4 py-6 md:px-10 lg:px-16">
@@ -56,7 +92,7 @@ export const Banner = () => {
               <p className='findDami pb-5'>Simply browse through our extensive list of trusted doctors, schedule <br />your appointment hassle-free.</p>
          </div>
          <div className="row">
-            <div className="col-lg-2 col-md-4 col-sm-4 findRes">
+            <div onClick={handleGeneral}  className="col-lg-2 col-md-4 col-sm-4 findRes">
                 <div  className='MyImg hover:cursor-pointer'>
                 <div className='d-flex justify-center'>
                    <img src={findImg} alt="images" />
@@ -66,7 +102,7 @@ export const Banner = () => {
                 </div>
             </div>
 
-            <div className="col-lg-2 col-md-4 col-sm-4 findRes">
+            <div onClick={handleGynecologist} className="col-lg-2 col-md-4 col-sm-4 findRes">
             <div  className='MyImg hover:cursor-pointer'>
                 <div className='d-flex justify-center'>
                    <img src={findImg1} alt="images" />
@@ -76,7 +112,7 @@ export const Banner = () => {
                 </div>
             </div>
 
-            <div className="col-lg-2 col-md-4 col-sm-4 findRes">
+            <div onClick={handleDermatologist} className="col-lg-2 col-md-4 col-sm-4 findRes">
             <div  className='MyImg hover:cursor-pointer'>
                 <div className='d-flex justify-center'>
                    <img src={findImg2} alt="images" />
@@ -85,7 +121,7 @@ export const Banner = () => {
                  <p className='general text-center py-2'>Dermatologist</p>
                 </div>
             </div>
-            <div className="col-lg-2 col-md-4 col-sm-4 findRes">
+            <div onClick={ handlePediatricians} className="col-lg-2 col-md-4 col-sm-4 findRes">
             <div  className='MyImg hover:cursor-pointer'>
                 <div className='d-flex justify-center'>
                    <img src={findImg3} alt="images" />
@@ -94,7 +130,7 @@ export const Banner = () => {
                  <p className='general text-center py-2'>Pediatricians</p>
                 </div>
             </div>
-            <div className="col-lg-2 col-md-4 col-sm-4 findRes">
+            <div onClick={handleNeurologist} className="col-lg-2 col-md-4 col-sm-4 findRes">
             <div  className='MyImg hover:cursor-pointer'>
                 <div className='d-flex justify-center'>
                    <img src={findImg4} alt="images" />
@@ -103,7 +139,7 @@ export const Banner = () => {
                  <p className='general text-center py-2'>Neurologist</p>
                 </div>
             </div>
-            <div className="col-lg-2 col-md-4 col-sm-4 findRes">
+            <div onClick={handleGastroenterologist} className="col-lg-2 col-md-4 col-sm-4 findRes">
             <div  className='MyImg hover:cursor-pointer'>
                 <div className='d-flex justify-center'>
                    <img src={findImg5} alt="images" />

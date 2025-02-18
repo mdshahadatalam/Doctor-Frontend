@@ -37,7 +37,7 @@ const handleSubmit =()=>{
             if(result.data === "Success"){
                   dispatch(loggedInUser(user))
                localStorage.setItem("user",JSON.stringify(user))
-                  navigate("/allDoc")
+                  navigate("/")
               }else{
                   navigate("/signUp")
                   toast.error('You are not registered to this service', {

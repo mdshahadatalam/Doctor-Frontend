@@ -12,14 +12,20 @@ import newDoc5 from '../assets/images/newDoc/newDoc (5).png'
 import newDoc6 from '../assets/images/newDoc/newDoc (6).png'
 import newDoc7 from '../assets/images/newDoc/newDoc (7).png'
 import newDoc8 from '../assets/images/newDoc/newDoc (8).png'
+import { useNavigate } from 'react-router'
 
 export const Neurologist = () => {
+     const navigate = useNavigate()
+     const handleNavigate =()=>{
+          navigate('/appointment')
+          scroll(0,0)
+     }
   return (
    <>
       <section className=' py-5'>
                    <div className="container">
                        <div className="row">
-                           <div className="col-lg-4 col-md-4 col-sm-6 doctorRes">
+                           <div onClick={handleNavigate} className="col-lg-4 col-md-4 col-sm-6 doctorRes">
                                 <div className='shadow-md rounded-md  p-2 bg-[#C9D8FF] my-2 MyImg hover:cursor-pointer'>
                                    <div className=''><img src={newDoc8} alt="image" /></div>
            
@@ -32,7 +38,7 @@ export const Neurologist = () => {
                                      <span className='general'>General physician</span>
                                 </div>
                            </div>
-                           <div className="col-lg-4 col-md-4 col-sm-6 doctorRes">
+                           <div onClick={handleNavigate} className="col-lg-4 col-md-4 col-sm-6 doctorRes">
                            <div className='shadow-md rounded-md  p-2 bg-[#C9D8FF] my-2 MyImg hover:cursor-pointer'>
                                    <div className=''><img src={newDoc3} alt="image" /></div>
            
@@ -45,7 +51,7 @@ export const Neurologist = () => {
                                      <span className='general'>General physician</span>
                                 </div>
                            </div>
-                           <div className="col-lg-4 col-md-4 col-sm-6 doctorRes">
+                           <div onClick={handleNavigate} className="col-lg-4 col-md-4 col-sm-6 doctorRes">
                            <div className='shadow-md rounded-md  p-2 bg-[#C9D8FF] my-2 MyImg hover:cursor-pointer'>
                                    <div className=''><img src={newDoc5} alt="image" /></div>
            
@@ -58,7 +64,7 @@ export const Neurologist = () => {
                                      <span className='general'>General physician</span>
                                 </div>
                            </div>
-                           <div className="col-lg-4 col-md-4 col-sm-6 doctorRes">
+                           <div onClick={handleNavigate} className="col-lg-4 col-md-4 col-sm-6 doctorRes">
                            <div className='shadow-md rounded-md  p-2 bg-[#C9D8FF] my-2 MyImg hover:cursor-pointer'>
                                    <div className=''><img src={doctor4} alt="image" /></div>
            
@@ -73,7 +79,7 @@ export const Neurologist = () => {
                            </div>
            
            
-                           <div className="col-lg-4 col-md-4 col-sm-6 doctorRes">
+                           <div onClick={handleNavigate} className="col-lg-4 col-md-4 col-sm-6 doctorRes">
                                 <div className='shadow-md rounded-md  p-2 bg-[#C9D8FF] my-2 MyImg hover:cursor-pointer'>
                                    <div className=''><img src={doctor1} alt="image" /></div>
            
@@ -86,7 +92,7 @@ export const Neurologist = () => {
                                      <span className='general'>General physician</span>
                                 </div>
                            </div>
-                           <div className="col-lg-4 col-md-4 col-sm-6 doctorRes">
+                           <div onClick={handleNavigate} className="col-lg-4 col-md-4 col-sm-6 doctorRes">
                            <div className='shadow-md rounded-md  p-2 bg-[#C9D8FF] my-2 MyImg hover:cursor-pointer'>
                                    <div className=''><img src={doctor2} alt="image" /></div>
            
@@ -99,7 +105,7 @@ export const Neurologist = () => {
                                      <span className='general'>General physician</span>
                                 </div>
                            </div>
-                           <div className="col-lg-4 col-md-4 col-sm-6 doctorRes">
+                           <div onClick={handleNavigate} className="col-lg-4 col-md-4 col-sm-6 doctorRes">
                            <div className='shadow-md rounded-md  p-2 bg-[#C9D8FF] my-2 MyImg hover:cursor-pointer'>
                                    <div className=''><img src={newDoc6} alt="image" /></div>
            
@@ -112,7 +118,7 @@ export const Neurologist = () => {
                                      <span className='general'>General physician</span>
                                 </div>
                            </div>
-                           <div className="col-lg-4 col-md-4 col-sm-6 doctorRes">
+                           <div onClick={handleNavigate} className="col-lg-4 col-md-4 col-sm-6 doctorRes">
                            <div className='shadow-md rounded-md  p-2 bg-[#C9D8FF] my-2 MyImg hover:cursor-pointer'>
                                    <div className=''><img src={doctor4} alt="image" /></div>
            

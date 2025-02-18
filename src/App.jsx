@@ -14,6 +14,12 @@ import LoggedInUser from './PrivateRoute/LoggeInRoute';
 import { useState } from 'react';
 import { DoctorDetaile } from './Pages/DoctorDetaile';
 import { Appointment } from './Component/Appointment';
+import { General } from './Pages/General';
+import { Gynecologist } from './Pages/Gynecologist';
+import { Dermatologist } from './Pages/Dermatologist';
+import { Pediatricians } from './Pages/Pediatricians';
+import { Neurologist } from './Pages/Neurologist';
+import { Gastroenterologist } from './Pages/Gastroenterologist';
 
 function App() {
 
@@ -30,12 +36,20 @@ function App() {
             <Route path='/user' element={<UserD/>}/>
             <Route path='/doctorD' element={<DoctorDetaile/>} />
 
-            <Route path='/appointment' element={<Appointment/>} />
+            
+            <Route path='/allDoc' element={<AllDoctor/>} />
+
+            <Route path='/general' element={<General/>} />
+            <Route path='/gynecologist' element={<Gynecologist/>} />
+            <Route path='/dermatologist' element={<Dermatologist/>} />
+            <Route path='/pediatricians' element={<Pediatricians/>} />
+            <Route path='/neurologist' element={<Neurologist/>} />
+            <Route path='/Gastroenterologist' element={<Gastroenterologist/>} />
           </Route>
 
           <Route element={<LoggedInUser/>}>
               <Route element={<RootLayout/>}>
-                 <Route path='/allDoc' element={<AllDoctor/>} />
+              <Route path='/appointment' element={<Appointment/>} />
                  </Route>
           </Route>
     </Route>

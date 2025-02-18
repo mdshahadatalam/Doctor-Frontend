@@ -7,6 +7,7 @@ export const BannerTwo = () => {
   const navigate = useNavigate()
   const handleSignUp =()=>{
     navigate('/signUp')
+    scroll(0,0)
   }
 
   return (
