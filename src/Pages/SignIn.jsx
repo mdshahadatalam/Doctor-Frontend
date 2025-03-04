@@ -24,52 +24,99 @@ const handlePassword =(e)=>{
    setPassword(e.target.value)
 }
 
-const handleSubmit =()=>{
-      // console.log(email,password)
-      setLoader(true)
-      axios.post('https://doctor-backend-five.vercel.app/login',{
-            email:email,
-            password:password
-      }).then((result)=>{
-            setLoader(false)
-            console.log(result.data)
+// const handleSubmit =()=>{
+//       // console.log(email,password)
+//       setLoader(true)
+//       axios.post('https://doctor-backend-five.vercel.app/login',{
+//             email:email,
+//             password:password
+//       }).then((result)=>{
+//             setLoader(false)
+//             console.log(result.data)
             
-            if(result.data === "Success"){
-                  dispatch(loggedInUser(user))
-               localStorage.setItem("user",JSON.stringify(user))
-                  navigate("/")
-              }else{
-                  navigate("/signUp")
-                  toast.error('You are not registered to this service', {
-                        position: "top-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: false,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "light",
-                        // transition: Bounce,
-                        });
+//             if(result.data === "Success"){
+//                   dispatch(loggedInUser(user))
+//                localStorage.setItem("user",JSON.stringify(user))
+//                   navigate("/")
+//               }else{
+//                   navigate("/signUp")
+//                   toast.error('You are not registered to this service', {
+//                         position: "top-right",
+//                         autoClose: 5000,
+//                         hideProgressBar: false,
+//                         closeOnClick: false,
+//                         pauseOnHover: true,
+//                         draggable: true,
+//                         progress: undefined,
+//                         theme: "light",
+//                         // transition: Bounce,
+//                         });
   
-              }
-      }).catch(err=>{
-            console.log(err)
-            setLoader(false)
+//               }
+//       }).catch(err=>{
+//             console.log(err)
+//             setLoader(false)
 
-             toast.error('Please try again', {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: false,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                    // transition: Bounce,
-                    });
-      })
-}
+//              toast.error('Please try again', {
+//                     position: "top-right",
+//                     autoClose: 5000,
+//                     hideProgressBar: false,
+//                     closeOnClick: false,
+//                     pauseOnHover: true,
+//                     draggable: true,
+//                     progress: undefined,
+//                     theme: "light",
+//                     // transition: Bounce,
+//                     });
+//       })
+// }
+
+const handleSubmit = async () => {
+      try {
+          setLoader(true);
+  
+          const response = await axios.post('https://doctor-backend-five.vercel.app/login', {
+              email,
+              password
+          });
+  
+          setLoader(false);
+          console.log(response.data);
+  
+          if (response.data === "Success") {
+              dispatch(loggedInUser(user));
+              localStorage.setItem("user", JSON.stringify(user));
+              navigate("/");
+          } else {
+              navigate("/signUp");
+              toast.error('You are not registered for this service', {
+                  position: "top-right",
+                  autoClose: 5000,
+                  hideProgressBar: false,
+                  closeOnClick: false,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "light",
+              });
+          }
+      } catch (error) {
+          console.error("Login Error:", error);
+          setLoader(false);
+  
+          toast.error('Please try again', {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+          });
+      }
+  };
+  
 
 
 useEffect(()=>{
