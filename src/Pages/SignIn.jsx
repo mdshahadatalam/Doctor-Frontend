@@ -27,7 +27,7 @@ const handlePassword =(e)=>{
 const handleSubmit =()=>{
       // console.log(email,password)
       setLoader(true)
-      axios.post('http://localhost:3000/login',{
+      axios.post('https://doctor-backend-git-main-md-shahadat-alams-projects.vercel.app/login',{
             email:email,
             password:password
       }).then((result)=>{
@@ -74,7 +74,7 @@ const handleSubmit =()=>{
 
 useEffect(()=>{
        async function data(){
-            let data = await axios.get('http://localhost:3000/loginData')
+            let data = await axios.get('https://doctor-backend-git-main-md-shahadat-alams-projects.vercel.app/loginData')
             // console.log(data.data)
             setUser(data.data)
             

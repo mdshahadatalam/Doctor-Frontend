@@ -29,7 +29,7 @@ export const SignUp = () => {
   const handleSubmit =()=>{
     // console.log(name,email,password);
       setLoader(true)
-    axios.post('http://localhost:3000/signUp',{
+    axios.post('https://doctor-backend-git-main-md-shahadat-alams-projects.vercel.app/signUp',{
       name:name,
       email:email,
       password:password
